@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(img/bg.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.sblux {
+    width: 420px;
+    background: transparent;
+    color: white;
+    border-radius: 12px;
+    padding: 30px 40px;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(10px);
+}
+
+.sblux h1 {
+    font-size: 36px;
+    text-align: center;
+
+}
+
+.sblux .ngcdeinput {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+}
+
+.ngcdeinput input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 40px;
+    font-size: 16px;
+    color: white;
+    padding: 20px 45px 20px 20px;
+}
+
+.ngcdeinput input::placeholder {
+    color: white;
+}
+
+.ngcdeinput i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%); 
+    font-size: 20px;
+}
+
+.giovana-btn {
+    width: 100%;
+    height: 45px;
+    background: white;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none; 
+    margin-top: 10px;
+}
+
+.giovana-btn:hover {
+    background: #f0f0f0; 
+}
+
+.ngcdeinput .link {
+    font-size: 14.5px;
+    text-align: center;
+    margin: 20px 0 15px;
+}
+
+.link p a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.link p a:hover {
+    text-decoration: underline;
+}

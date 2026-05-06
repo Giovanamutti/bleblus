@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="cadastro.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="sblux">
+        <form action="">
+            <h1>Login</h1>
+            <div class="ngcdeinput">
+                <input type="text" placeholder="Nome de usuário" required>
+                <i class="fas fa-user"></i>
+            </div>
+
+            <div class="ngcdeinput">
+                <input type="password" placeholder="Senha" required>
+                <i class="fas fa-lock"></i>
+            </div>
+
+            <button type="submit" class="giovana-btn">Login</button>
+            <div class="link">
+                <p>Não possui uma conta? <a href="#">Registre-se</a></p>
+            </div>
+        </form>
+    </div>
+    
+    <script>
+    const form = document.querySelector('form');
+    form.addEventListener('submit', (e) => {
+        e.preventDefault(); // Impede o envio padrão
+        window.location.href = "index.html"; // Redireciona após validar o required
+    });
+</script>
+</body>
+</html>

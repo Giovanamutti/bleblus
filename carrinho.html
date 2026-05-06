@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho - GuitarShop</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="produto.css">
+    <style>
+        .gordao {
+            background-color: cadetblue;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            padding: 40px 5%;
+        }
+
+        .vitor {
+            background: white;
+            width: 100%;
+            max-width: 900px;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            animation: joseFade 0.6s ease-out;
+        }
+
+        @keyframes joseFade {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .lorenzo {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #ddd;
+            padding: 20px 0;
+            gap: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .joseRemovendo {
+            transform: translateX(100px);
+            opacity: 0;
+        }
+
+        .joseDetalhes {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex: 1;
+        }
+
+        .joseThumb {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .joseBtnRemover {
+            background: #e63946;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .giovana {
+            margin-top: 30px;
+            text-align: right;
+            border-top: 2px solid #333;
+            padding-top: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .lorenzo { flex-direction: column; text-align: center; }
+            .joseDetalhes { flex-direction: column; }
+        }
+    </style>
+</head>
+<body class="gordao">
+
+    <div class="vitor">
+        <a href="index.html" class="btn-voltar">← Voltar para a Loja</a>
+        
+        <h1 class="cardh1" style="font-size: 2rem; margin-bottom: 20px; color: #333;">Seu Carrinho</h1>
+
+        <div id="container-itens">
+            
+            <div class="lorenzo" id="item-1">
+                <div class="joseDetalhes">
+                    <img src="img/strato.jpg" alt="Stratocaster" class="joseThumb">
+                    <div>
+                        <h3>Guitarra Stratocaster</h3>
+                        <p>Cor: Sunburst</p>
+                    </div>
+                </div>
+                <p class="produtopreco" style="color: #333;">R$ 3.000,00</p>
+                <button class="joseBtnRemover" onclick="removerItem('item-1', 3000)">Remover</button>
+            </div>
+
+            <div class="lorenzo" id="item-2">
+                <div class="joseDetalhes">
+                    <img src="img/warlock.jpg" alt="Warlock" class="joseThumb">
+                    <div>
+                        <h3>Guitarra Warlock</h3>
+                        <p>Cor: Black Stealth</p>
+                    </div>
+                </div>
+                <p class="produtopreco" style="color: #333;">R$ 5.500,00</p>
+                <button class="joseBtnRemover" onclick="removerItem('item-2', 5500)">Remover</button>
+            </div>
+
+        </div>
+
+        <div class="giovana">
+            <h2 id="exibicao-total" style="margin-bottom: 15px;">Total: R$ 8.500,00</h2>
+            <button class="btn-comprar" onclick="finalizarCompra()">Finalizar Compra</button>
+        </div>
+    </div>
+
+    <script>
+        let valorTotal = 8500;
+
+        function removerItem(idElemento, valorSubtrair) {
+            const item = document.getElementById(idElemento);
+            item.classList.add('joseRemovendo');
+
+            setTimeout(() => {
+                item.remove();
+                valorTotal -= valorSubtrair;
+                if(valorTotal < 0) valorTotal = 0;
+
+                document.getElementById('exibicao-total').innerText = `Total: R$ ${valorTotal.toLocaleString('pt-BR')},00`;
+
+                const container = document.getElementById('container-itens');
+                if (container.children.length === 0) {
+                    container.innerHTML = "<p style='padding:20px; text-align:center;'>Seu carrinho está vazio.</p>";
+                }
+            }, 300);
+        }
+
+        function finalizarCompra() {
+            if (valorTotal === 0) {
+                alert("Seu carrinho está vazio!");
+            } else {
+                alert("✅ Compra Finalizada com Sucesso!");
+                window.location.href = "index.html";
+            }
+        }
+    </script>
+
+</body>
+</html>
