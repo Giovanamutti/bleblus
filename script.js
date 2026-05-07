@@ -4,11 +4,11 @@ const navLinks = document.querySelector('.nav-links');
 mobileMenu.addEventListener('click', () => {
     navLinks.classList.toggle('active');
     
-    // Animação básica das barrinhas do menu (opcional)
+    // Animação barrinhas do menu
     mobileMenu.classList.toggle('is-active');
 });
 
-// Fechar o menu ao clicar em qualquer link (bom para mobile)
+// Fechar o menu ao clicar em qualquer link
 document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', () => {
         navLinks.classList.remove('active');

@@ -6,6 +6,7 @@
         "descricao": "A guitarra mais versátil do mundo.",
         "imagem": "img/strato.jpg"
     },
+
     {
         "id": "tele",
         "nome": "Telecaster",
@@ -13,11 +14,37 @@
         "descricao": "O som estalado preferido do blues.",
         "imagem": "img/tele.jpg"
     },
+
     {
         "id": "sg",
         "nome": "SG",
         "preco": "R$ 5.000,00",
         "descricao": "Famosa nas mãos de Angus Young (AC/DC).",
         "imagem": "img/sg.jpg"
+    },
+
+    {
+        "id": "warlock",
+        "nome": "B.C. Rich Warlock",
+        "preco": "R$ 5.500,00",
+        "descricao": "O pesadelo dos vizinhos!...",
+        "imagem": "img/warlock.jpg"
+    },
+
+    {
+        "id":"flyingv",
+        "nome": "Flying V Heritage",
+        "preco": "R$ 4.500,00",
+        "descricao": "Lançada originalmente em...",
+        "imagem": "img/flyingv.jpg"
+    },
+
+    {
+        "id": "ibanez",
+        "nome": "Ibanez RG Series",
+        "preco": "R$ 3.500,00",
+        "descricao": "A máquina de velocidade...",
+        "imagem": "img/ibanez.jpg"
     }
+
 ]
